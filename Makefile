@@ -105,6 +105,9 @@ osx-signed: build
 run: ## run local-ai
 	CGO_LDFLAGS="$(CGO_LDFLAGS)" $(GOCMD) run ./
 
+ngrok: ## run ngrok
+	ngrok http --url=sset-localai.ngrok.io 8081 --pooling-enabled=true
+
 test-models/testmodel.ggml:
 	mkdir test-models
 	mkdir test-dir
